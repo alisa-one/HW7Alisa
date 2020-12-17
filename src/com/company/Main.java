@@ -40,20 +40,19 @@ public class Main {
 
         ArrayList<String> spisokC = new ArrayList<>();
 
-        Comparator<String>comparator =(o1, o2) -> {
-            Integer i1 =o1.length();
-            Integer i2 =o2.length();
-            return i1.compareTo(i2);
 
-        };
       Iterator<String> iterA =spisokA.iterator();
       Iterator<String> iterB = spisokB.iterator();
       while (iterA.hasNext()&& iterB.hasNext()){
           spisokC.add(iterA.next());
           spisokC.add(iterB.next());
       }
+
       printList(spisokC);
 
+        spisokC.sort(Comparator.comparing(String::length));
+        System.out.println("__________________________________");
+        printList(spisokC);
 
 
 
