@@ -28,14 +28,14 @@ public class Main {
         }
         System.out.println("------------------------------------");
         System.out.println("Список А : ");
-        printListA(spisokA);
+        printList(spisokA);
         System.out.println("-----------------------------------");
         System.out.println("Список Б : ");
-        printListB(spisokB);
+        printList(spisokB);
         System.out.println("-----------------------------------");
         System.out.println("Список Б revers : ");
         Collections.reverse(spisokB);
-        printListB(spisokB);
+        printList(spisokB);
         System.out.println("-----------------------------------");
 
         ArrayList<String> spisokC = new ArrayList<>();
@@ -52,30 +52,19 @@ public class Main {
           spisokC.add(iterA.next());
           spisokC.add(iterB.next());
       }
-      printListC(spisokC);
+      printList(spisokC);
 
 
 
 
     }
-    public static void printListA (ArrayList < String > list) {
-        Iterator<String> itA = list.iterator();
-        while (itA.hasNext()) {
-            System.out.println(itA.next());
+    public static void printList (ArrayList < String > list) {
+        Iterator<String> it = list.iterator();
+        while (it.hasNext()) {
+            System.out.println(it.next());
         }
     }
-    public static void printListB (ArrayList < String > list) {
-        Iterator<String> itB = list.iterator();
-        while (itB.hasNext()) {
-            System.out.println(itB.next());
-        }
-    }
-    public static void printListC (ArrayList < String > list) {
-        Iterator<String> itC = list.iterator();
-        while (itC.hasNext()) {
-            System.out.println(itC.next());
-        }
-    }
+
 
 
 
