@@ -28,37 +28,55 @@ public class Main {
         }
         System.out.println("------------------------------------");
         System.out.println("Список А : ");
-        printList(spisokA);
+        printListA(spisokA);
         System.out.println("-----------------------------------");
         System.out.println("Список Б : ");
-        printList(spisokB);
+        printListB(spisokB);
         System.out.println("-----------------------------------");
         System.out.println("Список Б revers : ");
         Collections.reverse(spisokB);
-        printList(spisokB);
+        printListB(spisokB);
         System.out.println("-----------------------------------");
 
+        ArrayList<String> spisokC = new ArrayList<>();
 
-        public static void  makeSpisokC ( spisokA,  spisokB ) {
-            Iterator<String>itA = spisokA.listIterator();
-            Iterator<String>itB = spisokB.listIterator();
-            while (itA.hasNext()) {
-                System.out.println(itA.next());
-                while (itB.hasNext()) {
-                    System.out.println(itB.next());
+        Comparator<String>comparator =(o1, o2) -> {
+            Integer i1 =o1.length();
+            Integer i2 =o2.length();
+            return i1.compareTo(i2);
+
+        };
+      Iterator<String> iterA =spisokA.iterator();
+      Iterator<String> iterB = spisokB.iterator();
+      while (iterA.hasNext()&& iterB.hasNext()){
+          spisokC.add(iterA.next());
+          spisokC.add(iterB.next());
+      }
+      printListC(spisokC);
 
 
-                }
-            }
 
 
+    }
+    public static void printListA (ArrayList < String > list) {
+        Iterator<String> itA = list.iterator();
+        while (itA.hasNext()) {
+            System.out.println(itA.next());
         }
     }
-    public static void printList (ArrayList < String > list) {
-        Iterator<String> it = list.iterator();
-        while (it.hasNext()) {
-            System.out.println(it.next());
+    public static void printListB (ArrayList < String > list) {
+        Iterator<String> itB = list.iterator();
+        while (itB.hasNext()) {
+            System.out.println(itB.next());
         }
     }
+    public static void printListC (ArrayList < String > list) {
+        Iterator<String> itC = list.iterator();
+        while (itC.hasNext()) {
+            System.out.println(itC.next());
+        }
+    }
+
+
 
 }
